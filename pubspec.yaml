@@ -1,0 +1,108 @@
+name: trailgame
+description: "Cinderforge Trail - a one-touch volcanic route puzzle."
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.12.2
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.8
+  flutter_riverpod: ^2.6.1
+  go_router: ^17.3.0
+  shared_preferences: ^2.5.5
+  webview_flutter: ^4.14.1
+  audioplayers: ^6.8.1
+  flutter_animate: ^4.5.2
+  phosphor_flutter: ^2.1.0
+  fl_chart: ^1.2.0
+  percent_indicator: ^4.2.5
+  smooth_page_indicator: ^2.0.1
+  flutter_staggered_grid_view: ^0.7.0
+  confetti: ^0.8.0
+  shimmer: ^3.0.0
+  gap: ^3.0.1
+  animated_text_kit: ^4.3.0
+  url_launcher: ^6.3.2
+  package_info_plus: ^10.2.1
+  image_picker: ^1.2.3
+  path_provider: ^2.1.6
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^6.0.0
+  flutter_launcher_icons: ^0.14.4
+  flutter_native_splash: ^2.4.8
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/app/ui/
+    - assets/app/bg/
+    - assets/app/icon/
+    - assets/app/audio/
+    - assets/app/legal/
+    - assets/app/sprites/character/
+    - assets/app/sprites/trail/
+    - assets/app/sprites/ground/
+    - assets/app/sprites/obstacle/
+    - assets/app/sprites/frozen/
+    - assets/app/sprites/crystal/
+    - assets/app/sprites/mechanism/
+    - assets/app/sprites/relic/
+    - assets/app/sprites/creature/
+    - assets/app/sprites/nature/
+    - assets/app/sprites/tree/
+    - assets/app/sprites/bridge/
+    - assets/app/sprites/effect/
+    - assets/app/sprites/lava/
+    - assets/app/sprites/rune/
+
+  fonts:
+    - family: Cinzel
+      fonts:
+        - asset: assets/app/fonts/Cinzel-Regular.ttf
+          weight: 400
+        - asset: assets/app/fonts/Cinzel-SemiBold.ttf
+          weight: 600
+        - asset: assets/app/fonts/Cinzel-Bold.ttf
+          weight: 700
+        - asset: assets/app/fonts/Cinzel-Black.ttf
+          weight: 900
+    - family: Manrope
+      fonts:
+        - asset: assets/app/fonts/Manrope-Regular.ttf
+          weight: 400
+        - asset: assets/app/fonts/Manrope-Medium.ttf
+          weight: 500
+        - asset: assets/app/fonts/Manrope-SemiBold.ttf
+          weight: 600
+        - asset: assets/app/fonts/Manrope-Bold.ttf
+          weight: 700
+        - asset: assets/app/fonts/Manrope-ExtraBold.ttf
+          weight: 800
+
+flutter_launcher_icons:
+  android: "ic_launcher"
+  ios: false
+  image_path: "assets/app/icon/icon.png"
+  # The foreground fills the whole adaptive canvas, so the launcher's centre
+  # crop still shows artwork edge to edge with no empty margin.
+  adaptive_icon_background: "#160C0A"
+  adaptive_icon_foreground: "assets/app/icon/icon_foreground.png"
+  min_sdk_android: 23
+  remove_alpha_ios: true
+
+flutter_native_splash:
+  color: "#0B0A0F"
+  android_12:
+    color: "#0B0A0F"
+  android: true
+  ios: false
+  web: false

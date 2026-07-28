@@ -1,0 +1,15 @@
+character: 10
+trail: 30
+ground: 10
+obstacle: 14
+frozen: 18
+crystal: 10
+mechanism: 18
+relic: 25
+creature: 15
+nature: 23
+tree: 8
+bridge: 30
+effect: 17
+lava: 12
+rune: 34

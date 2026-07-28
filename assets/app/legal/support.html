@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>Cinderforge Trail — Support</title>
+<style>
+  :root { color-scheme: light; }
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: #ffffff;
+    color: #000000;
+  }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+      "Helvetica Neue", Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    padding: 22px 20px 56px;
+    -webkit-text-size-adjust: 100%;
+  }
+  h1 { font-size: 26px; margin: 0 0 6px; letter-spacing: -0.2px; }
+  p { margin: 0 0 14px; color: #000000; }
+  .lead { color: #333333; }
+  label {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.4px;
+    text-transform: uppercase;
+    color: #555555;
+    margin: 18px 0 6px;
+  }
+  input, textarea {
+    width: 100%;
+    box-sizing: border-box;
+    font: inherit;
+    color: #000000;
+    background: #ffffff;
+    border: 1px solid #d6d6d6;
+    border-radius: 10px;
+    padding: 12px 14px;
+    outline: none;
+  }
+  input:focus, textarea:focus { border-color: #b3400f; }
+  textarea { min-height: 132px; resize: vertical; }
+  button {
+    width: 100%;
+    margin-top: 20px;
+    font: inherit;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    color: #ffffff;
+    background: #b3400f;
+    border: 0;
+    border-radius: 12px;
+    padding: 15px 18px;
+  }
+  button:active { background: #922f07; }
+  .note {
+    margin-top: 18px;
+    font-size: 13px;
+    color: #555555;
+  }
+  .card {
+    background: #fafafa;
+    border: 1px solid #e6e6e6;
+    border-radius: 12px;
+    padding: 14px 16px;
+    margin: 18px 0 0;
+  }
+  a { color: #b3400f; text-decoration: none; word-break: break-all; }
+  .sent {
+    display: none;
+    margin-top: 18px;
+    padding: 14px 16px;
+    border-radius: 12px;
+    background: #eef8ef;
+    border: 1px solid #c9e6cc;
+    color: #14571c;
+    font-weight: 600;
+  }
+  .error { display: none; margin-top: 10px; color: #b00020; font-size: 14px; }
+</style>
+</head>
+<body>
+  <h1>Support</h1>
+  <p class="lead">Fill out the form below to ask a question or submit a request.
+  Your message opens in your mail app and is sent to our support team.</p>
+
+  <form id="form" onsubmit="return submitForm(event)">
+    <label for="email">Your email</label>
+    <input id="email" type="email" inputmode="email" autocomplete="email"
+           placeholder="you@example.com">
+
+    <label for="question">Question</label>
+    <textarea id="question"
+              placeholder="Tell us what happened, and which level you were on."></textarea>
+
+    <div class="error" id="error">Please enter your email and your question.</div>
+
+    <button type="submit">Send</button>
+  </form>
+
+  <div class="sent" id="sent">Your request has been prepared. Finish sending it
+  from your mail app.</div>
+
+  <div class="card">
+    <p style="margin:0 0 6px"><strong>Direct email</strong></p>
+    <p style="margin:0">
+      <a href="mailto:support@cinderforgetrail.com">support@cinderforgetrail.com</a>
+    </p>
+  </div>
+
+  <p class="note">Cinderforge Trail · App ID 6792827359 ·
+  com.cinderforge.trailgame</p>
+
+<script>
+  function submitForm(event) {
+    event.preventDefault();
+    var email = document.getElementById('email').value.trim();
+    var question = document.getElementById('question').value.trim();
+    var error = document.getElementById('error');
+    if (!email || !question) {
+      error.style.display = 'block';
+      return false;
+    }
+    error.style.display = 'none';
+    var subject = encodeURIComponent('Cinderforge Trail support request');
+    var body = encodeURIComponent(
+      question + '\n\n---\nReply to: ' + email + '\nApp: Cinderforge Trail'
+    );
+    document.getElementById('sent').style.display = 'block';
+    window.location.href =
+      'mailto:support@cinderforgetrail.com?subject=' + subject + '&body=' + body;
+    return false;
+  }
+</script>
+</body>
+</html>

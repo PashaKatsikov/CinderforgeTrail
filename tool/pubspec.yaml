@@ -1,0 +1,9 @@
+name: sprite_tool
+description: Internal tooling for slicing Cinderforge Trail sprite sheets.
+publish_to: 'none'
+
+environment:
+  sdk: ^3.9.0
+
+dependencies:
+  image: ^4.5.4
