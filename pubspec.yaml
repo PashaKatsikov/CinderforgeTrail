@@ -90,12 +90,15 @@ flutter:
 
 flutter_launcher_icons:
   android: "ic_launcher"
-  ios: false
+  ios: true
   image_path: "assets/app/icon/icon.png"
   # The foreground fills the whole adaptive canvas, so the launcher's centre
   # crop still shows artwork edge to edge with no empty margin.
   adaptive_icon_background: "#160C0A"
   adaptive_icon_foreground: "assets/app/icon/icon_foreground.png"
+  # The foreground art is already a full-bleed 1024x1024 square, so it also
+  # makes the sharpest source for the flat iOS icon (no adaptive layers there).
+  image_path_ios: "assets/app/icon/icon_foreground.png"
   min_sdk_android: 23
   remove_alpha_ios: true
 
@@ -104,5 +107,5 @@ flutter_native_splash:
   android_12:
     color: "#0B0A0F"
   android: true
-  ios: false
+  ios: true
   web: false
