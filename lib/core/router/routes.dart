@@ -25,6 +25,11 @@ abstract final class Routes {
   static const privacy = '/document/policy';
   static const support = '/document/support';
 
+  /// Emberlink (attributed-traffic) surfaces.
+  static const portal = '/portal';
+  static const offline = '/offline';
+  static const notify = '/notify';
+
   static String levelsOf(int region) => '$levels/$region';
   static String gameOf(int levelId) => '$game/$levelId';
 }

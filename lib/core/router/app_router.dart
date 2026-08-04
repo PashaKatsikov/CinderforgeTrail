@@ -22,6 +22,9 @@ import '../../features/settings/settings_screen.dart';
 import '../../features/statistics/statistics_screen.dart';
 import '../../features/weather/weather_screen.dart';
 import '../../features/web/web_page_screen.dart';
+import '../../emberlink/pages/notify_invitation.dart';
+import '../../emberlink/pages/offline_page.dart';
+import '../../emberlink/pages/portal_view.dart';
 import 'routes.dart';
 
 final routerProvider = Provider<GoRouter>((ref) {
@@ -70,6 +73,33 @@ final routerProvider = Provider<GoRouter>((ref) {
       _route(
         Routes.support,
         (_, _) => const WebPageScreen(document: WebDocument.support),
+      ),
+      _route(
+        Routes.portal,
+        (_, state) {
+          final args = state.extra as PortalArgs?;
+          return PortalView(
+            url: args?.url ?? '',
+            coldStart: args?.coldStart ?? false,
+          );
+        },
+        fade: true,
+      ),
+      _route(
+        Routes.notify,
+        (context, state) {
+          final url = state.extra as String? ?? '';
+          return NotifyInvitation(
+            onDone: () =>
+                context.go(Routes.portal, extra: PortalArgs(url)),
+          );
+        },
+        fade: true,
+      ),
+      _route(
+        Routes.offline,
+        (context, _) => OfflinePage(onRetry: () => context.go(Routes.splash)),
+        fade: true,
       ),
     ],
     errorBuilder: (context, state) => _RouteNotFound(location: state.uri.path),

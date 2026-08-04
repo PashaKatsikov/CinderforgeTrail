@@ -43,3 +43,8 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
+
+# Dev-only helper that holds PLAINTEXT gray-flow values (AppsFlyer dev key,
+# endpoints, OneLink). The encoded constants are already baked into
+# lib/emberlink/core/ember_config.dart — never publish the plaintext source.
+/tool/encode_ember_values.dart

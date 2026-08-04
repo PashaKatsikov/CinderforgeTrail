@@ -1,7 +1,7 @@
 name: trailgame
 description: "Cinderforge Trail - a one-touch volcanic route puzzle."
 publish_to: 'none'
-version: 1.0.0+1
+version: 1.0.1+2
 
 environment:
   sdk: ^3.12.2
@@ -30,6 +30,17 @@ dependencies:
   package_info_plus: ^10.2.1
   image_picker: ^1.2.3
   path_provider: ^2.1.6
+  appsflyer_sdk: ^6.18.1
+  app_tracking_transparency: ^2.0.7
+  firebase_core: ^4.13.0
+  firebase_messaging: ^16.5.0
+  firebase_app_check: ^0.4.6
+  flutter_local_notifications: ^22.2.0
+  connectivity_plus: ^7.3.1
+  http: ^1.6.0
+  device_info_plus: ^13.2.0
+  flutter_secure_storage: ^10.3.1
+  webview_flutter_wkwebview: ^3.26.0
 
 dev_dependencies:
   flutter_test:
@@ -43,6 +54,7 @@ flutter:
   uses-material-design: true
 
   assets:
+    - assets/Cinderforge_Trail_additional_assets/
     - assets/app/ui/
     - assets/app/bg/
     - assets/app/icon/
