@@ -1,7 +1,7 @@
 name: trailgame
 description: "Cinderforge Trail - a one-touch volcanic route puzzle."
 publish_to: 'none'
-version: 1.0.1+2
+version: 1.0.1+3
 
 environment:
   sdk: ^3.12.2

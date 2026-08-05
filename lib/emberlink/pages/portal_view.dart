@@ -120,11 +120,14 @@ class _PortalViewState extends ConsumerState<PortalView>
     services.signal.onDestination = _onPushDestination;
     unawaited(services.signal.bootstrap());
 
-    // Show the offline screen the instant every interface drops, instead of
-    // waiting for the next WebView load error to surface it.
+    // React when every interface drops — but CONFIRM with a reachability probe
+    // before showing offline. connectivity_plus emits a transient/empty
+    // "all-down" while the WebView network stack spins up on mount, which was
+    // flashing nowifi on a perfectly online launch. canReach() rejects that
+    // false positive (online → passes) while still catching a real outage.
     _connSub = const ReachProbe().changes.listen((states) {
       if (mounted && !_offline && ReachProbe.allDown(states)) {
-        setState(() => _offline = true);
+        unawaited(_maybeGoOffline());
       }
     });
 
